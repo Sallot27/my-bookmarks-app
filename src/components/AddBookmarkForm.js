@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import styles from './AddBookmarkForm.module.css';
+
 
 const AddBookmarkForm = () => {
   const [title, setTitle] = useState('');
@@ -12,7 +14,6 @@ const AddBookmarkForm = () => {
       const newBookmark = { title, url, description };
       const response = await axios.post('/bookmarks', newBookmark);
       console.log(response.data); // Handle the response as desired
-      // Reset form fields
       setTitle('');
       setUrl('');
       setDescription('');

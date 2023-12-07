@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import AddBookmarkForm from './AddBookmarkForm';
-import BookmarksList from './BookmarksList';
+import AddBookmarkForm from './components/AddBookmarkForm';
+import BookmarksList from './components/BookmarksList';
+
 
 const App = () => {
   const [bookmarks, setBookmarks] = useState([]);
