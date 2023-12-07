@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import AddBookmarkForm from './AddBookmarkForm';
-import BookmarksList from './BookmarksList';
 
-const App = () => {
+const BookmarksList = () => {
   const [bookmarks, setBookmarks] = useState([]);
 
   useEffect(() => {
@@ -21,11 +19,16 @@ const App = () => {
 
   return (
     <div>
-      <h1>Bookmarks App</h1>
-      <AddBookmarkForm />
-      <BookmarksList bookmarks={bookmarks} />
+      {bookmarks.map((bookmark) => (
+        <div key={bookmark.id}>
+          <h3>{bookmark.title}</h3>
+          <p>{bookmark.description}</p>
+          <a href={bookmark.url}>Visit Website</a>
+          {}
+        </div>
+      ))}
     </div>
   );
 };
 
-export default App;
+export default BookmarksList;
